@@ -1223,7 +1223,7 @@
 <ul>
 <li>Rufus</li>
 <li>Ventoy</li>
-<li>balenaEtcher</li>
+<li>WoeUSB (Linux only)</li>
 </ul>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">UUP dump</label><label for="__tabbed_1_2">Windows 10 Media Creation Tool</label></div>
 <div class="tabbed-content">
@@ -1258,7 +1258,7 @@
 <p class="admonition-title">Your USB will be wiped</p>
 <p>Make sure to back up any files on the USB drive you want to keep, because the bootable USB creator will delete them. You cannot get around this. Any files you want to keep, copy them to an external drive or the cloud.</p>
 </div>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:5"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Rufus</label><label for="__tabbed_2_2">Rufus + Download ISO</label><label for="__tabbed_2_3">Ventoy</label><label for="__tabbed_2_4">balenaEtcher</label><label for="__tabbed_2_5">Windows 10 Media Creation Tool</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Rufus</label><label for="__tabbed_2_2">Ventoy</label><label for="__tabbed_2_3">WoeUSB (Linux only)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <ol>
@@ -1275,31 +1275,28 @@
 </div>
 <div class="tabbed-block">
 <ol>
-<li>Download and open <a href="https://github.com/pbatard/rufus/releases" target="_blank" rel="noopener">Rufus</a>.</li>
-<li>Plug in your USB, and then click <code>Device</code> to select it.</li>
-<li>Open the menu to the right of the <code>SELECT</code> button, and select <code>DOWNLOAD</code>.</li>
-<li>Follow the "Download ISO Image" wizard and use the following options:<ul>
-<li><strong>Version</strong>: Windows 10</li>
-<li><strong>Release</strong>: 22H2</li>
-<li><strong>Edition</strong>: Windows 10 Home/Pro/Edu</li>
-<li><strong>Language</strong>: Your preferred language</li>
-<li><strong>Architecture</strong>: x64</li>
-</ul>
-</li>
-<li>Choose where to save the ISO file.</li>
-<li>Click <code>START</code> and in the "Windows User Experience" wizard, click <code>OK</code>.</li>
-<li>Press <code>OK</code> again and your USB will be erased and turned into a bootable USB.</li>
+<li>Download and <strong>unzip</strong> <a href="https://github.com/ventoy/Ventoy/releases" target="_blank" rel="noopener">Ventoy</a> (you want the file ending in <code>-windows.zip</code>).</li>
+<li>Open <code>Ventoy2Disk.exe</code> and pick your USB Drive in the Device menu.</li>
+<li>If you are using UEFI, go in <code>Option</code> on the top left, then in <code>Partition style</code> select <code>GPT</code>.</li>
+<li>If you do not use Secure Boot or use <abbr title="Master Boot Record">MBR</abbr>, disable Secure boot support from the Option menu.</li>
+<li>Click <code>Install</code> then click OK in the two warnings, this will turn your USB into a bootable USB.</li>
 <li>Extract <code>Atlas [version].zip</code> and copy the files and folders to the root directory of your USB.</li>
+<li>If you downloaded drivers for your Ethernet/Wi-Fi adapter, copy them over now.</li>
+<li>Move Windows 10 22H2 iso onto the USB Stick.</li>
 </ol>
 </div>
 <div class="tabbed-block">
-<p><em>We're sorry, but the documentation for this isn't written yet. Feel free to provide your contribution at <a href="https://github.com/Atlas-OS/docs" target="_blank" rel="noopener">https://github.com/Atlas-OS/docs</a>.</em></p>
-</div>
-<div class="tabbed-block">
-<p><em>We're sorry, but the documentation for this isn't written yet. Feel free to provide your contribution at <a href="https://github.com/Atlas-OS/docs" target="_blank" rel="noopener">https://github.com/Atlas-OS/docs</a>.</em></p>
-</div>
-<div class="tabbed-block">
-<p><em>We're sorry, but the documentation for this isn't written yet. Feel free to provide your contribution at <a href="https://github.com/Atlas-OS/docs" target="_blank" rel="noopener">https://github.com/Atlas-OS/docs</a>.</em></p>
+<ol>
+<li>Download <a href="https://github.com/WoeUSB/WoeUSB#run-from-source" target="_blank" rel="noopener">WoeUSB</a>.</li>
+<li>Open a terminal and go to the location you downloaded it.</li>
+<li>Run <code>lsblk</code> to locate your usb drive, in this guide it will be <code>sdX</code></li>
+<li>Type <code>chmod +x woeusb*.bash</code> then press enter.</li>
+<li>Type <code>sudo bash woeusb*.bash --device PATH/TO/WINDOWS_10.iso /dev/sdX</code></li>
+<li>Double check you typed the correct drive.</li>
+<li>Press enter and wait for it to turn your USB into a bootable USB.</li>
+<li>Extract <code>Atlas [version].zip</code> and copy the files and folders to the root directory of your USB.</li>
+<li>If you downloaded drivers for your Ethernet/Wi-Fi adapter, copy them over now.</li>
+</ol>
 </div>
 </div>
 </div>
@@ -1357,7 +1354,7 @@
         <span class="md-icon" title="Last update">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">April 1, 2023 06:00:45</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">April 1, 2023 07:44:26</span>
       </span>
     
     
@@ -1380,6 +1377,16 @@
             <a href="https://github.com/whallin" class="md-author" title="@whallin" target="_blank" rel="noopener">
               
               <img src="../../assets/external/avatars.githubusercontent.com/u/56734956.5aea0b69.png" alt="whallin">
+            </a>
+          
+            <a href="https://github.com/Xyueta" class="md-author" title="@Xyueta" target="_blank" rel="noopener">
+              
+              <img src="../../assets/external/avatars.githubusercontent.com/u/101590573.5aea0b69.png" alt="Xyueta">
+            </a>
+          
+            <a href="https://github.com/pog5" class="md-author" title="@pog5" target="_blank" rel="noopener">
+              
+              <img src="../../assets/external/avatars.githubusercontent.com/u/62222436.5aea0b69.jpg" alt="pog5">
             </a>
           
           

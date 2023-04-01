@@ -1223,7 +1223,6 @@
 <ul>
 <li>Rufus</li>
 <li>Ventoy</li>
-<li>WoeUSB (Linux only)</li>
 </ul>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">UUP dump</label><label for="__tabbed_1_2">Windows 10 Media Creation Tool</label></div>
 <div class="tabbed-content">
@@ -1250,7 +1249,7 @@
 </div>
 <div class="admonition example">
 <p class="admonition-title">Install with no USB</p>
-<p>There is a way to install AtlasOS without a USB drive. Learn how to install AtlasOS without a USB drive by reading <a href="/Getting started/Other installation methods/Install with no USB/">this</a> guide. But if you want to set up and install AtlasOS quickly and easily, we suggest using a USB drive.</p>
+<p>There is a way to install AtlasOS without a USB drive. Learn how to install AtlasOS without a USB drive by reading <a href="/Getting started/Other installation methods/Install with no USB">this</a> guide. But if you want to set up and install AtlasOS quickly and easily, we suggest using a USB drive.</p>
 </div>
 <h2 id="preparing-your-usb"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 13c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3m0 2c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1M9.77 4.33l.73.75 3.79-3.79c.18-.18.43-.29.71-.29.28 0 .53.11.71.29l7.07 7.07v.01a1.02 1.02 0 0 1-.12 1.39l-3.73 3.74.74.73-6.72 6.72A6.976 6.976 0 0 1 8 23c-3.87 0-7-3.13-7-7 0-1.93.78-3.68 2.05-4.95l6.72-6.72m1.77 15.21 5.3-5.31-7.07-7.07-5.31 5.3C3.56 13.37 3 14.62 3 16c0 2.76 2.24 5 5 5 1.38 0 2.63-.56 3.54-1.46m3.53-14.85L16.5 6.1l-1.43 1.4-1.41-1.4 1.41-1.41M17.9 7.5l1.41 1.43-1.41 1.41-1.4-1.41 1.4-1.43M20.59 9 15 3.41 11.93 6.5l5.57 5.58L20.59 9Z"/></svg></span> Preparing your USB</h2>
 <p>This step may be different for you depending on how you made your bootable USB. We have written down how to use the most popular tools for making bootable USB drives. But unfortunately, we cannot promise support and documentation for all bootable USB creators.</p>
@@ -1258,7 +1257,7 @@
 <p class="admonition-title">Your USB will be wiped</p>
 <p>Make sure to back up any files on the USB drive you want to keep, because the bootable USB creator will delete them. You cannot get around this. Any files you want to keep, copy them to an external drive or the cloud.</p>
 </div>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Rufus</label><label for="__tabbed_2_2">Ventoy</label><label for="__tabbed_2_3">WoeUSB (Linux only)</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Rufus</label><label for="__tabbed_2_2">Ventoy</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <ol>
@@ -1283,19 +1282,6 @@
 <li>Extract <code>Atlas [version].zip</code> and copy the files and folders to the root directory of your USB.</li>
 <li>If you downloaded drivers for your Ethernet/Wi-Fi adapter, copy them over now.</li>
 <li>Move Windows 10 22H2 iso onto the USB Stick.</li>
-</ol>
-</div>
-<div class="tabbed-block">
-<ol>
-<li>Download <a href="https://github.com/WoeUSB/WoeUSB#run-from-source" target="_blank" rel="noopener">WoeUSB</a>.</li>
-<li>Open a terminal and go to the location you downloaded it.</li>
-<li>Run <code>lsblk</code> to locate your usb drive, in this guide it will be <code>sdX</code></li>
-<li>Type <code>chmod +x woeusb*.bash</code> then press enter.</li>
-<li>Type <code>sudo bash woeusb*.bash --device PATH/TO/WINDOWS_10.iso /dev/sdX</code></li>
-<li>Double check you typed the correct drive.</li>
-<li>Press enter and wait for it to turn your USB into a bootable USB.</li>
-<li>Extract <code>Atlas [version].zip</code> and copy the files and folders to the root directory of your USB.</li>
-<li>If you downloaded drivers for your Ethernet/Wi-Fi adapter, copy them over now.</li>
 </ol>
 </div>
 </div>
@@ -1354,7 +1340,7 @@
         <span class="md-icon" title="Last update">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">April 1, 2023 07:44:26</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">April 1, 2023 07:48:04</span>
       </span>
     
     
@@ -1374,14 +1360,14 @@
         <span>GitHub</span>
         <nav>
           
-            <a href="https://github.com/whallin" class="md-author" title="@whallin" target="_blank" rel="noopener">
-              
-              <img src="../../assets/external/avatars.githubusercontent.com/u/56734956.5aea0b69.png" alt="whallin">
-            </a>
-          
             <a href="https://github.com/Xyueta" class="md-author" title="@Xyueta" target="_blank" rel="noopener">
               
               <img src="../../assets/external/avatars.githubusercontent.com/u/101590573.5aea0b69.png" alt="Xyueta">
+            </a>
+          
+            <a href="https://github.com/whallin" class="md-author" title="@whallin" target="_blank" rel="noopener">
+              
+              <img src="../../assets/external/avatars.githubusercontent.com/u/56734956.5aea0b69.png" alt="whallin">
             </a>
           
             <a href="https://github.com/pog5" class="md-author" title="@pog5" target="_blank" rel="noopener">

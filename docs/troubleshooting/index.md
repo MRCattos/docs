@@ -24,3 +24,14 @@ Progress should start again
 1. Enable animations from atlas folder which is located at: `Atlas/3. Configuration/1. General Configuration/Animations`
 2. Press the windows key and type "adjust the appearance and performance of windows" and enable "show thumbnails insteaf of icons".
 3. Make sure "Always show icons, never thumbnails" is off in the file explorer.
+
+## Hyper-V not working
+Some people get "...not found" errors when trying to enable Hyper-V.
+### Fixing most not found errors
+1. Run "Reset Network to Windows Default" in `Atlas/4. Troubleshooting/Network/`
+2. Run `wsl --install` in Powershell as admin
+3. Run "Enable Lanman Workstation" in `Atlas/3. Configuration/1. General Configuration/Lanman Workstation (SMB)` and restart your PC.
+4. Restart and run "Enable Hyper-V and VBS" in `Atlas/3. Configuration/1. General Configuration/Hyper-V and VBS`
+### Service/Driver gcs not found
+Make sure something along the lines of "virtualization" is enabled in your bios.
+Still have errors ? Make sure to make a post in the atlas-support channel in the discord server.
